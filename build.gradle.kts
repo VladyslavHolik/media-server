@@ -33,6 +33,7 @@ dependencies {
     // file utils
     implementation("commons-io:commons-io:2.11.0")
 
+    implementation("org.fluentd:fluent-logger:0.3.3")
 
     // string substitutor
     implementation("org.apache.commons:commons-text:1.10.0")

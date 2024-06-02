@@ -2,8 +2,6 @@ package com.example.mediaserver.api
 
 import com.example.mediaserver.api.dto.MediaDTO
 import com.example.mediaserver.config.FluentdClient
-import io.swagger.annotations.Api
-import io.swagger.annotations.ApiOperation
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.io.FileSystemResource
 import org.springframework.http.HttpHeaders
@@ -14,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile
 import java.io.File
 import java.io.IOException
 
-@Api("Media Controller")
 @RestController
 @RequestMapping("/v1/api/media")
 class MediaController(
@@ -22,7 +19,6 @@ class MediaController(
     @Value("\${host}") var host: String,
     val logger: FluentdClient
 ) {
-    @ApiOperation("Upload media")
     @PostMapping("/{filename}")
     fun uploadMedia(
         @RequestPart("file") multipartFile: MultipartFile,
